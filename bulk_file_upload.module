@@ -1,0 +1,22 @@
+<?php
+function bulk_file_upload_menu(){
+  $items['admin/config/media/bulk_file_upload/bulk_file_upload'] = array(
+    'title' => 'Bulk File Upload',
+    'page callback' => 'bulk_file_upload',
+    'access arguments' => array('bulk_file_upload'),
+    'file' => 'bulk_file_upload.admin.inc',
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function bulk_file_upload_permission() {
+  $permissions = array(
+    'bulk_file_upload' => array(
+      'title' => t('Upload Files'),
+    ),
+  );
+  return $permissions;
+}
